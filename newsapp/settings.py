@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+
+    'news',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +73,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'newsapp.wsgi.application'
 
+# Rest framework
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
