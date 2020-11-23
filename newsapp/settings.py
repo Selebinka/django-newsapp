@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -35,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drf_yasg',
+
     'django_celery_beat',
 
     'oauth2_provider',
@@ -120,7 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 # News API
-NEWS_API_KEY = ''
+NEWS_API_KEY = '9fdf4b905944430b898502e82222a89a'
 
 # REDIS related settings
 REDIS_HOST = 'localhost'
@@ -145,5 +148,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
 BASE_URL = 'http://127.0.0.1:8000'
+
+STATIC_URL = '/static/'
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# VENV_PATH = os.path.dirname(BASE_DIR)
+# STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
