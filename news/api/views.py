@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics, permissions
 
 from .serializers import ArticleSerializer, FavoriteArticleSerializer
 from ..models import Article, FavoriteArticle
@@ -10,6 +10,7 @@ class ArticleList(generics.ListCreateAPIView):
     """
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly, )
 
 
 class ArticleDetail(generics.RetrieveDestroyAPIView):
@@ -18,6 +19,7 @@ class ArticleDetail(generics.RetrieveDestroyAPIView):
     """
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
 
 class FavoriteArticleList(generics.ListAPIView):
