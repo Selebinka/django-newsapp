@@ -1,4 +1,6 @@
+from django.shortcuts import get_object_or_404
 from rest_framework import serializers
+
 from ..models import Article, FavoriteArticle
 
 
@@ -26,5 +28,6 @@ class FavoriteArticleSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         user = self.context['request'].user
-        article_id = self.context['view'].kwargs.get('article_id')
-        return FavoriteArticle.objects.create(user=user, article=article_id)
+        article = get_object_or_404(Article,
+                                    pk=self.context['view'].kwargs.get('article_id'))
+        return FavoriteArticle.objects.create(user=user, article=article)
