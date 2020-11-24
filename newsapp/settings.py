@@ -139,7 +139,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 # News API
-NEWS_API_KEY = '9fdf4b905944430b898502e82222a89a'
+NEWS_API_KEY = 'your news api key'
+OAUTH_APP_NAME = 'your app name'
 
 # REDIS related settings
 REDIS_HOST = 'localhost'
