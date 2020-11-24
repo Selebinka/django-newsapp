@@ -7,7 +7,10 @@ from rest_framework.response import Response
 from .serializers import CreateUserSerializer
 from .utils import get_client_id_and_client_secret
 
-CLIENT_ID, CLIENT_SECRET = get_client_id_and_client_secret(name='newsapp')
+if get_client_id_and_client_secret(name='BaseAuth'):
+    CLIENT_ID, CLIENT_SECRET = get_client_id_and_client_secret(name='BaseAuth')
+else:
+    CLIENT_ID = CLIENT_SECRET = None
 
 
 @api_view(['POST'])
