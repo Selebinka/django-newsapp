@@ -7,8 +7,8 @@ from rest_framework.response import Response
 from .serializers import CreateUserSerializer
 from .utils import get_client_id_and_client_secret
 
-if get_client_id_and_client_secret(name='BaseAuth'):
-    CLIENT_ID, CLIENT_SECRET = get_client_id_and_client_secret(name='BaseAuth')
+if get_client_id_and_client_secret(name=settings.OAUTH_APP_NAME):
+    CLIENT_ID, CLIENT_SECRET = get_client_id_and_client_secret(name=settings.OAUTH_APP_NAME)
 else:
     CLIENT_ID = CLIENT_SECRET = None
 
