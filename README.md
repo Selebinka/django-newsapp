@@ -9,7 +9,7 @@ API for viewing, adding to favorites and deleting news from the portal https://n
     *  OAuth2
     *  PostgreSQL
 
-You can see all dependencies in the "requirements.txt" file. \  
+You can see all dependencies in the "requirements.txt" file.  
 Use *pip install -r requirements.txt* to install
 
 # Make migrations
@@ -21,7 +21,7 @@ Use *pip install -r requirements.txt* to install
 
 *python manage.py createsuperuser*
 
-#Config OAuth2
+# Config OAuth2
 
 Add your NEWS_API_KEY to settings.py. \
 In http://127.0.0.1:8000/admin/oauth2_provider/application/ create new app. \
