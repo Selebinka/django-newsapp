@@ -29,11 +29,6 @@ class ArticleModelTest(TestCase):
         self.article_without_publisher.delete()
         self.user.delete()
 
-    def test_created_in_db(self):
-        self.assertEquals(Article.objects.all().count(), int(2))
-        self.assertEquals(self.article.id, int(1))
-        self.assertEquals(self.article_without_publisher.id, int(2))
-
     def test_publisher_field(self):
         self.assertEquals(self.article.publisher, self.user)
         self.assertEquals(self.article_without_publisher.publisher, None)
